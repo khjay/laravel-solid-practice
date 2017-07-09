@@ -6,11 +6,7 @@ class AreaCalculator
     public function calculate($shapes)
     {
         foreach ($shapes as $shape) {
-            if (is_a($shape, 'Square')) {
-                $area[] = $shape->width * $shape->height;
-            } elseif (is_a($shape, 'Circle')) {
-                $area = $shape->radius * $shape->radius * pi();
-            }
+            $area[] = $shape->area();
         }
 
         return array_sum($area);
